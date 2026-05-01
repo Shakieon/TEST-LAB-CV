@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caribbean Quest: Grade Six Social Studies</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <section class="topbar">
+      <div>
+        <p class="eyebrow">Grade Six Social Studies</p>
+        <h1>Caribbean Quest</h1>
+      </div>
+      <div class="controls" aria-label="Game controls">
+        <button id="soundBtn" class="icon-button" type="button" aria-label="Toggle sound" title="Toggle sound">Sound On</button>
+        <button id="calmBtn" class="icon-button" type="button" aria-label="Toggle calm mode" title="Toggle calm mode">Calm</button>
+      </div>
+    </section>
+
+    <section id="startScreen" class="hero">
+      <div class="island-scene" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="cloud cloud-a"></div>
+        <div class="cloud cloud-b"></div>
+        <div class="sea"></div>
+        <div class="island"></div>
+        <div class="palm trunk"></div>
+        <div class="palm leaves"></div>
+      </div>
+      <div class="intro">
+        <p class="tag">Built from the 2017-2025 CV Social Studies files</p>
+        <h2>Answer quick questions. Collect stars. Unlock island badges.</h2>
+        <p>Choose a year, answer the full paper in order, earn coins, and review missed questions.</p>
+        <div class="year-picker" aria-labelledby="yearPickerTitle">
+          <h3 id="yearPickerTitle">Choose Test Year</h3>
+          <div id="yearChoices" class="year-choices"></div>
+        </div>
+        <button id="startBtn" class="primary" type="button" disabled>Start Quest</button>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="game hidden">
+      <div class="status-strip">
+        <div>
+          <span class="label">Coins</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span class="label">Streak</span>
+          <strong id="streak">Year</strong>
+        </div>
+        <div>
+          <span class="label">Question</span>
+          <strong><span id="roundNow">1</span>/<span id="roundTotal">10</span></strong>
+        </div>
+      </div>
+
+      <div class="progress-shell" aria-label="Round progress">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <article class="question-panel">
+        <div class="category-row">
+          <span id="category" class="category">Family</span>
+          <span id="badge" class="badge">Ready</span>
+        </div>
+        <h2 id="questionText">Question text</h2>
+        <div class="question-body">
+          <figure id="imageFrame" class="question-image-frame hidden">
+            <img id="questionImage" src="" alt="">
+          </figure>
+          <div id="answers" class="answers"></div>
+        </div>
+        <div id="feedback" class="feedback">Choose the best answer.</div>
+      </article>
+
+      <div class="action-row">
+        <button id="hintBtn" class="secondary" type="button">Hint</button>
+        <button id="nextBtn" class="primary hidden" type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="endScreen" class="end hidden">
+      <h2 id="endTitle">Quest complete!</h2>
+      <p id="endMessage"></p>
+      <div id="resultStats" class="result-stats" aria-label="Test result summary"></div>
+      <div id="badgeShelf" class="badge-shelf"></div>
+      <section class="review-section" aria-labelledby="reviewTitle">
+        <h3 id="reviewTitle">Review Missed Questions</h3>
+        <div id="reviewList" class="review-list"></div>
+      </section>
+      <div class="end-actions">
+        <button id="chooseYearBtn" class="secondary" type="button">Choose Different Year</button>
+        <button id="playAgainBtn" class="primary" type="button">Play Again</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="questions-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
